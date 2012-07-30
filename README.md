@@ -13,9 +13,7 @@ copperegg_webhooks_handler
 
 Requirements
 ============
-sinatra
-thin
-json
+sinatra, thin, json
 
 Platform
 ========
