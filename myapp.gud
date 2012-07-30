@@ -1,0 +1,33 @@
+require 'sinatra'
+require 'json'
+#require 'pp'
+#require 'multi_json'
+#require 'rack'
+require 'logger'
+#require 'active_support'
+require 'active_support/core_ext/hash'
+
+log = Logger.new('log.txt')
+log.level = Logger::INFO
+
+get '/' do
+  "CopperEgg Webhook Example"
+end
+ 
+post '/' do
+  alert = Hash.new
+  alert = JSON::parse(request.body.read)
+  alert.each do |key,value|
+    if key.to_s == "details"
+      d = Array.new(alert["details"])
+      log.info "details array : \n"
+      d.each_index { |i| log.info d[i][0].to_s + " = " + d[i][1].to_s + "\n" }
+    else
+      log.info key.to_s + " = " + value.to_s + "\n"
+    end
+  end  
+  status 201
+end
+
+
+

@@ -1,0 +1,337 @@
+# Logfile created on 2012-07-06 10:19:17 -0500 by logger.rb/25413
+I, [2012-07-06T10:19:22.865073 #28404]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-06T10:19:22.865161 #28404]  INFO -- : create_time = 2012-07-06 15:19:22 UTC
+
+I, [2012-07-06T10:19:22.865200 #28404]  INFO -- : clear_time = 
+
+I, [2012-07-06T10:19:22.865232 #28404]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-06T10:19:22.865262 #28404]  INFO -- : issue_type = active
+
+I, [2012-07-06T10:19:22.865299 #28404]  INFO -- : details array : 
+
+I, [2012-07-06T10:19:22.865340 #28404]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-06T10:19:22.865373 #28404]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-06T10:19:22.865405 #28404]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-06T10:19:22.865437 #28404]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-06T10:19:22.865468 #28404]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-06T10:19:22.865499 #28404]  INFO -- : hostname = anderson-test
+
+I, [2012-07-06T10:19:22.865534 #28404]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-06T10:19:22.865574 #28404]  INFO -- : description = System Details
+
+I, [2012-07-07T20:59:26.845141 #31940]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T20:59:26.865444 #31940]  INFO -- : create_time = 2012-07-08 01:59:25 UTC
+
+I, [2012-07-07T20:59:26.865602 #31940]  INFO -- : clear_time = 
+
+I, [2012-07-07T20:59:26.865684 #31940]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T20:59:26.865761 #31940]  INFO -- : issue_type = active
+
+I, [2012-07-07T20:59:26.865865 #31940]  INFO -- : details array : 
+
+I, [2012-07-07T20:59:26.865946 #31940]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T20:59:26.866020 #31940]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T20:59:26.866094 #31940]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T20:59:26.866167 #31940]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T20:59:26.866240 #31940]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T20:59:26.866324 #31940]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T20:59:26.866398 #31940]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T20:59:26.866472 #31940]  INFO -- : description = System Details
+
+I, [2012-07-07T21:39:34.125103 #32543]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:39:34.125314 #32543]  INFO -- : create_time = 2012-07-08 02:39:33 UTC
+
+I, [2012-07-07T21:39:34.125401 #32543]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:39:34.125478 #32543]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:39:34.125552 #32543]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:39:34.125638 #32543]  INFO -- : details array : 
+
+I, [2012-07-07T21:39:34.125717 #32543]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:39:34.125790 #32543]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:39:34.125864 #32543]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:39:34.125937 #32543]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:39:34.126008 #32543]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:39:34.126080 #32543]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:39:34.126152 #32543]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:39:34.126224 #32543]  INFO -- : description = System Details
+
+I, [2012-07-07T21:41:04.321475 #32564]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:41:04.321583 #32564]  INFO -- : create_time = 2012-07-08 02:41:03 UTC
+
+I, [2012-07-07T21:41:04.321621 #32564]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:41:04.321655 #32564]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:41:04.321687 #32564]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:41:04.321724 #32564]  INFO -- : details array : 
+
+I, [2012-07-07T21:41:04.321757 #32564]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:41:04.321789 #32564]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:41:04.321821 #32564]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:41:04.321872 #32564]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:41:04.321905 #32564]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:41:04.321936 #32564]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:41:04.321968 #32564]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:41:04.321999 #32564]  INFO -- : description = System Details
+
+I, [2012-07-07T21:44:26.566044 #32576]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:44:26.566193 #32576]  INFO -- : create_time = 2012-07-08 02:44:25 UTC
+
+I, [2012-07-07T21:44:26.566241 #32576]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:44:26.566282 #32576]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:44:26.566334 #32576]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:44:26.566384 #32576]  INFO -- : details array : 
+
+I, [2012-07-07T21:44:26.566429 #32576]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:44:26.566462 #32576]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:44:26.566498 #32576]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:44:26.566531 #32576]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:44:26.566562 #32576]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:44:26.566594 #32576]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:44:26.566626 #32576]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:44:26.566657 #32576]  INFO -- : description = System Details
+
+I, [2012-07-07T21:46:25.133375 #32589]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:46:25.133497 #32589]  INFO -- : create_time = 2012-07-08 02:46:24 UTC
+
+I, [2012-07-07T21:46:25.133551 #32589]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:46:25.133592 #32589]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:46:25.133643 #32589]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:46:25.133697 #32589]  INFO -- : details array : 
+
+I, [2012-07-07T21:46:25.133749 #32589]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:46:25.133780 #32589]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:46:25.133810 #32589]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:46:25.133849 #32589]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:46:25.133881 #32589]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:46:25.133913 #32589]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:46:25.133944 #32589]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:46:25.133983 #32589]  INFO -- : description = System Details
+
+I, [2012-07-07T21:46:58.046297 #32589]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:46:58.046499 #32589]  INFO -- : create_time = 2012-07-08 02:46:57 UTC
+
+I, [2012-07-07T21:46:58.046612 #32589]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:46:58.046714 #32589]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:46:58.046817 #32589]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:46:58.046923 #32589]  INFO -- : details array : 
+
+I, [2012-07-07T21:46:58.047032 #32589]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:46:58.047110 #32589]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:46:58.047186 #32589]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:46:58.047261 #32589]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:46:58.047335 #32589]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:46:58.047415 #32589]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:46:58.047489 #32589]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:46:58.047563 #32589]  INFO -- : description = System Details
+
+I, [2012-07-07T21:50:19.092699 #32613]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:50:19.092826 #32613]  INFO -- : create_time = 2012-07-08 02:50:18 UTC
+
+I, [2012-07-07T21:50:19.092880 #32613]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:50:19.092941 #32613]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:50:19.092987 #32613]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:50:19.093072 #32613]  INFO -- : details array : 
+
+I, [2012-07-07T21:50:19.093119 #32613]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:50:19.093151 #32613]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:50:19.093199 #32613]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:50:19.093230 #32613]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:50:19.093265 #32613]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:50:19.093297 #32613]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:50:19.093328 #32613]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:50:19.093359 #32613]  INFO -- : description = System Details
+
+I, [2012-07-07T21:51:49.337817 #32627]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:51:49.337943 #32627]  INFO -- : create_time = 2012-07-08 02:51:48 UTC
+
+I, [2012-07-07T21:51:49.337993 #32627]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:51:49.338047 #32627]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:51:49.338089 #32627]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:51:49.338148 #32627]  INFO -- : details array : 
+
+I, [2012-07-07T21:51:49.338194 #32627]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:51:49.338226 #32627]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:51:49.338258 #32627]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:51:49.338289 #32627]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:51:49.338319 #32627]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:51:49.338350 #32627]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:51:49.338381 #32627]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:51:49.338412 #32627]  INFO -- : description = System Details
+
+I, [2012-07-07T21:52:00.386552 #32627]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:52:00.386741 #32627]  INFO -- : create_time = 2012-07-08 02:51:59 UTC
+
+I, [2012-07-07T21:52:00.386856 #32627]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:52:00.386963 #32627]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:52:00.387069 #32627]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:52:00.387180 #32627]  INFO -- : details array : 
+
+I, [2012-07-07T21:52:00.387287 #32627]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:52:00.387361 #32627]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:52:00.387432 #32627]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:52:00.387505 #32627]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:52:00.387576 #32627]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:52:00.387647 #32627]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:52:00.387719 #32627]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:52:00.387791 #32627]  INFO -- : description = System Details
+
+I, [2012-07-07T21:53:38.553329 #32647]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:53:38.553455 #32647]  INFO -- : create_time = 2012-07-08 02:53:37 UTC
+
+I, [2012-07-07T21:53:38.553512 #32647]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:53:38.553567 #32647]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:53:38.553611 #32647]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:53:38.553673 #32647]  INFO -- : details array : 
+
+I, [2012-07-07T21:53:38.553722 #32647]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:53:38.553755 #32647]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:53:38.553787 #32647]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:53:38.553819 #32647]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:53:38.553850 #32647]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:53:38.553882 #32647]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:53:38.553917 #32647]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:53:38.553949 #32647]  INFO -- : description = System Details
+
+I, [2012-07-07T21:53:51.841929 #32647]  INFO -- : alert_id = 4ff309ac656d8ceb78612be6
+
+I, [2012-07-07T21:53:51.842158 #32647]  INFO -- : create_time = 2012-07-08 02:53:51 UTC
+
+I, [2012-07-07T21:53:51.842280 #32647]  INFO -- : clear_time = 
+
+I, [2012-07-07T21:53:51.842400 #32647]  INFO -- : alert_text = FAKE-HP server: load (Load 0.013 < 1.0)
+
+I, [2012-07-07T21:53:51.842513 #32647]  INFO -- : issue_type = active
+
+I, [2012-07-07T21:53:51.842629 #32647]  INFO -- : details array : 
+
+I, [2012-07-07T21:53:51.842739 #32647]  INFO -- : aws_ami_id = ami-8e1fece7
+
+I, [2012-07-07T21:53:51.842815 #32647]  INFO -- : aws_inst_id = i-134de272
+
+I, [2012-07-07T21:53:51.842890 #32647]  INFO -- : aws_kernel_id = aki-427d952b
+
+I, [2012-07-07T21:53:51.842964 #32647]  INFO -- : aws_reservation_id = r-03b9676c
+
+I, [2012-07-07T21:53:51.843040 #32647]  INFO -- : aws_inst_type = m1.large
+
+I, [2012-07-07T21:53:51.843113 #32647]  INFO -- : hostname = anderson-test
+
+I, [2012-07-07T21:53:51.843201 #32647]  INFO -- : label = Eric's Test Machine
+
+I, [2012-07-07T21:53:51.843281 #32647]  INFO -- : description = System Details
+

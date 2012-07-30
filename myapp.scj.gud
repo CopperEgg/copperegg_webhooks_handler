@@ -1,0 +1,76 @@
+require 'sinatra'
+require 'json'
+require 'pp'
+require 'multi_json'
+require 'rack'
+require 'logger'
+require 'active_support'
+require 'active_support/core_ext/hash'
+
+log = Logger.new('log.txt')
+log.level = Logger::INFO
+
+get '/webhook' do
+  "Hello Webhook"
+end
+ 
+post '/' do
+  alert = Hash.new
+  #alert = JSON::parse(request.body.read).with_indifferent_access
+  alert = JSON::parse(request.body.read)
+  #keys = alert.keys
+  alert.each do |key,value|
+    if key.to_s == "details"
+    
+    else
+      log.info key.to_s + " = " + value.to_s + "\n"
+    end
+  end  
+  d = Array.new(alert["details"])
+  log.info "details array : \n"
+  d.each_index { |i| log.info d[i][0].to_s + " = " + d[i][1].to_s + "\n" }
+  
+  
+  #log.info alert.inspect
+  #log.info "#{keys}"
+  #log.info data_json.to_s
+  #log.info("decoded = " + str)
+  #pp JSON.parse(post.body)
+  status 201
+end
+
+# Returns an array of all client side HTTP request headers.
+def client_request_headers
+  # POST /some/url HTTP/1.1
+  # Accept: application/json
+  # Content-Type: application/json
+  headers = request.env.select { |k,v| k.start_with? 'HTTP_' } \
+	.collect { |pair| [ pair[0].sub(/^HTTP_/, ''), pair[1] ] } \
+	.collect { |pair| pair.join(': ') }
+
+  headers
+end
+
+
+
+
+
+# Represents header/body information of a HTTP POST request.
+class Post
+  attr_reader :received_at, :headers, :body
+
+  def initialize(headers, body, received_at = nil)
+    @received_at = received_at || Time.now
+    @headers = headers    
+    @body = body
+  end
+
+  # Returns true only if the two posts contain equal data.
+  def ==(other)
+    return false unless Post === other
+    return false unless received_at == other.received_at
+    return false unless headers == other.headers
+    body == other.body
+  end
+end
+
