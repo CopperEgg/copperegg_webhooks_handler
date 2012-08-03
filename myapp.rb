@@ -1,6 +1,8 @@
 #
 # Copyright 2012 CopperEgg Corporation.  All rights reserved.
 #
+require 'rubygems'
+require 'net/ssh'
 require 'sinatra'
 require 'json'
 
@@ -16,7 +18,29 @@ post '/' do
   status 201
 end
 
+###############################################
+#
+# routine to SSH into a server, and issue a command
+#
+def ssh_cmd(host, user, passwd, cmdstr)
+  @hostname = host
+  @username = user
+  @password = passwd
+  @cmd = cmdstr
 
+  ssh = Net::SSH.start(@hostname, @username, :password => @password)
+  res = ssh.exec!(@cmd)
+  ssh.close
+  puts res
+rescue
+  puts "Unable to connect to #{@hostname} using #{@username}/#{@password}"
+end
+
+
+###############################################
+#
+# initial webhook decoder
+#
 def decode_post(alert)
   issue_type = alert_text = alert_source = sys_name = probe_name = alert_desc = \
     alert_trigger = alert_id = ""
@@ -61,6 +85,8 @@ def decode_post(alert)
   else
     puts "Unknown alert source"
   end
+rescue
+  puts "Error during initial alert post decoding"
 end
 
 ###############################################
@@ -69,7 +95,7 @@ end
 
 def handle_system_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   if issue_type == "active"
-    if alert_text.include? "Process List"
+    if alert_text.include? "Process list"
       handle_process_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
     elsif alert_text.include? "CPU Total Usage"
       handle_cpu_total_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
@@ -103,10 +129,13 @@ end
 ###############################################
 #
 # Individual system alert handlers
-# Insert code to be executed when the following alerts go active / inactive
+# Insert code to be executed when the following alerts go active
 
 def handle_process_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Process List alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Process list alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  if alert_text.include? "does not contain"
+    handle_lost_proc(sys_name,alert_desc,alert_trigger,alert_text,alert_id)
+  end
 end
 
 def handle_cpu_total_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
@@ -156,7 +185,7 @@ end
 # probe alert decoder / handler
 
 def handle_probe_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
- if issue_type == "active"
+  if issue_type == "active"
     if alert_text.include? "Response Time"
       handle_response_time_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
     elsif alert_text.include? "Response Status Code"
@@ -177,7 +206,7 @@ end
 ###############################################
 #
 # Individual probe alert handlers
-# Insert code to be executed when the following probe alerts go active / inactive
+# Insert code to be executed when the following probe alerts go active
 
 def handle_response_time_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   puts "Response Time alert:  id = " + alert_id + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
@@ -194,3 +223,16 @@ end
 def handle_probe_health_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   puts "Health alert:  id = " + alert_id + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
+
+###############################################
+#
+# Lost Proc handler
+# Example : restart nfsd
+
+def handle_lost_proc(sys_name,alert_desc,alert_trigger,alert_text,alert_id)
+  if alert_text.include? "nfsd"
+    puts "Restarting nfsd"
+    ssh_cmd("192.168.143.167", "root", "password", "/etc/init.d/nfs-kernel-server restart")
+  end
+end
+
