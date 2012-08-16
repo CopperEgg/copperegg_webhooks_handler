@@ -232,7 +232,8 @@ end
 def handle_lost_proc(sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   if alert_text.include? "nfsd"
     puts "Restarting nfsd"
-    ssh_cmd("192.168.143.167", "root", "password", "/etc/init.d/nfs-kernel-server restart")
+#    ssh_cmd("127.0.0.1", "root", "password", \ 
+#           "/etc/init.d/nfs-kernel-server restart")
   end
 end
 
