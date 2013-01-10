@@ -1,6 +1,10 @@
 #
 # Copyright 2012 CopperEgg Corporation.  All rights reserved.
 #
+# webhooks.rb
+#
+#encoding: utf-8
+
 require 'rubygems'
 require 'net/ssh'
 require 'sinatra'
@@ -45,6 +49,7 @@ def decode_post(alert)
   issue_type = alert_text = alert_source = sys_name = probe_name = alert_desc = \
     alert_trigger = alert_id = ""
   alert.each do |key,value|
+    # alert_id is a very early hash key, no longer used.
     if key.to_s == "alert_id"
       oidhash = Hash.new
       oidhash = value
@@ -53,19 +58,25 @@ def decode_post(alert)
       else
         puts "Error Decoding alert_id"
       end
+    elsif key.to_s == "alertid"
+      alert_id = value
+
     elsif key.to_s == "details"
       d = Array.new(alert["details"])
-      puts "details array : "
-      puts "\t" + d[0].to_s + " = " + d[1].to_s
-      d1 = Array.new(d[2])
-      d1.each_index { |i| puts "\t" + d1[i][0].to_s + " = " + d1[i][1].to_s }
+      h1 = Hash.new
+      h1 = d[2]
+
+    elsif key.to_s == "tags"
+      t = Array.new(alert["tags"])
     else
-      if key.to_str == "alert_text"
-        alert_text = value.to_str
-      elsif key.to_str == "alert_source"
-        alert_source = value.to_str
-      elsif key.to_str == "issue_type"
-        issue_type = value.to_str
+      if key.to_s == "alert_text"
+        alert_text = value.to_s
+      elsif key.to_s == "alert_source"
+        alert_source = value.to_s
+      elsif key.to_s == "kind"
+        issue_type = value.to_s
+      elsif key.to_s == "issue_type"
+        issue_type = value.to_s
       else
         puts  key.to_s + " = " + value.to_s
       end
@@ -95,7 +106,7 @@ end
 
 def handle_system_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   if issue_type == "active"
-    if alert_text.include? "Process list"
+    if alert_text.include? "Process List"
       handle_process_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
     elsif alert_text.include? "CPU Total Usage"
       handle_cpu_total_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
@@ -121,7 +132,7 @@ def handle_system_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,
       puts "Error decoding system alert_text"
     end
   else
-    puts "system alert cleared:  id = " + alert_id
+    puts "system alert cleared:  id = " + alert_id.to_s
   end
 end
 
@@ -132,50 +143,50 @@ end
 # Insert code to be executed when the following alerts go active
 
 def handle_process_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Process list alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Process List alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
   if alert_text.include? "does not contain"
     handle_lost_proc(sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   end
 end
 
 def handle_cpu_total_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "CPU Total Usage alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "CPU Total Usage alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_cpu_steal_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "CPU Steal Usage alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "CPU Steal Usage alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_cpu_iowait_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "CPU IOWait Usage alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "CPU IOWait Usage alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_active_mem_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Active Memory Usage alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Active Memory Usage alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_filesystem_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Filesystem Usage alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Filesystem Usage alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_load_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Load alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Load alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_network_sent_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Network Bytes Sent alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Network Bytes Sent alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_network_rcvd_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Network Bytes Received alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Network Bytes Received alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_health_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Health alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Health alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_system_not_seen_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "System Not Seen alert:  id = " + alert_id + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "System Not Seen alert:  id = " + alert_id.to_s + "\n\tsystem = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 
@@ -209,19 +220,19 @@ end
 # Insert code to be executed when the following probe alerts go active
 
 def handle_response_time_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Response Time alert:  id = " + alert_id + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Response Time alert:  id = " + alert_id.to_s + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_status_code_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Response Status Code alert:  id = " + alert_id + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Response Status Code alert:  id = " + alert_id.to_s + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_uptime_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Uptime alert:  id = " + alert_id + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Uptime alert:  id = " + alert_id.to_s + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 def handle_probe_health_alert(issue_type,sys_name,alert_desc,alert_trigger,alert_text,alert_id)
-  puts "Health alert:  id = " + alert_id + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
+  puts "Health alert:  id = " + alert_id.to_s + "\n\tprobe = " + sys_name + ", desc = " + alert_desc + ", trigger = " + alert_trigger
 end
 
 ###############################################
@@ -232,7 +243,7 @@ end
 def handle_lost_proc(sys_name,alert_desc,alert_trigger,alert_text,alert_id)
   if alert_text.include? "nfsd"
     puts "Restarting nfsd"
-#    ssh_cmd("127.0.0.1", "root", "password", \ 
+#    ssh_cmd("127.0.0.1", "root", "password", \
 #           "/etc/init.d/nfs-kernel-server restart")
   end
 end

@@ -25,8 +25,9 @@ Usage
 * - Open a terminal window on your local dev system
 * - clone this repo to your dev system
 * - install sinatra, json and thin gems
+* - run bundle
 * - run the program:
-*    ruby myapp.rb
+*    ruby webhooks.rb
 * - thin / sinatra will start up a local webserver on your dev machine, which can be
 *     accessed at localhost:4567
 * - create an internet-visible proxy for your local webserver ... for example using

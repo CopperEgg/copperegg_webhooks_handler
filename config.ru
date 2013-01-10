@@ -1,2 +1,2 @@
-require 'myapp'
+require 'webhooks'
 run Sinatra::Application
