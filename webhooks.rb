@@ -1,5 +1,5 @@
 #
-# Copyright 2012 CopperEgg Corporation.  All rights reserved.
+# Copyright 2012 IDERA.  All rights reserved.
 #
 # webhooks.rb
 #
@@ -11,7 +11,7 @@ require 'sinatra'
 require 'json'
 
 get '/' do
-  "CopperEgg Webhook Handler Example"
+  "Uptime Cloud Monitor Webhook Handler Example"
 end
 
 post '/' do
