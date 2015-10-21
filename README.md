@@ -1,10 +1,10 @@
 copperegg_webhooks_handler
 ==========================
 
-* This is example code provided by CopperEgg for our customers who are using Webhooks.
+* This is example code provided by Uptime Cloud Monitor for our customers who are using Webhooks.
 * This ruby code:
 *   - runs sinatra on thin;
-*   - it completely parses and decodes all CopperEgg webhook system and probe alerts;
+*   - it completely parses and decodes all Uptime Cloud Monitor webhook system and probe alerts;
 *   - each alert type is broken-down to an individual method, which prints a message to
 *     stdout;
 *   - these individual methods can be modified to execute code to restart your server,
@@ -40,7 +40,7 @@ Usage
 
 Links
 =====
-* [CopperEgg Homepage](http://www.copperegg.com)
+* [Uptime Cloud Monitor Homepage](https://www.idera.com/infrastructure-monitoring-as-a-service/)
 * [ProxyLocal Homepage](http://www.proxylocal.com)
 * [Sinatra Homepage](http://www.sinatrarb.com)
 
